@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavPageRoute } from './components/header/navPageRoute.enum';
 
 @Component({
   selector: 'app-root',
@@ -6,4 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+    currentRoute: NavPageRoute;
+    navPageRoute = NavPageRoute;
+
+    onNavRoute(route: NavPageRoute){
+        this.currentRoute = route;
+    }
 }
