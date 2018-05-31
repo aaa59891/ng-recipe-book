@@ -14,7 +14,23 @@ export class ShoppingListService{
     }
 
     addIngredient(ingredient: Ingredient){
-        this.ingredients.push(ingredient);
+        this._addIngredient(ingredient);
         this.ingredientsChangedEE.emit(this.ingredients);
+    }
+
+    addIngredients(ingredients: Ingredient[]){
+        ingredients.forEach((ingredient) => {
+            this._addIngredient(ingredient);
+        })
+        this.ingredientsChangedEE.emit(this.ingredients);
+    }
+
+    private _addIngredient(ingredient: Ingredient){
+        const index = this.ingredients.map((ing) => ing.name).indexOf(ingredient.name);
+        if(index === -1){
+            this.ingredients.push(ingredient);
+        }else{
+            this.ingredients[index].amount += ingredient.amount;
+        }
     }
 }
