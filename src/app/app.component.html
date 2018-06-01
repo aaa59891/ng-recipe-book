@@ -3,8 +3,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-        <app-recipes *ngIf="currentRoute === navPageRoute.Recipe"></app-recipes>
-        <app-shopping-list *ngIf="currentRoute === navPageRoute.ShoppingList"></app-shopping-list>
+        <router-outlet></router-outlet>
     </div>
   </div>
 </div>
