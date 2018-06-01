@@ -16,6 +16,7 @@ import { ShoppingListService } from './services/shopping-list.service';
 import { RecipeService } from './services/recipe.service';
 import { RouterModule } from '@angular/router';
 import { routes } from './app-routes';
+import { RecipeDetailEmptyComponent } from './components/recipes/recipe-detail-empty/recipe-detail-empty.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { routes } from './app-routes';
     ShoppingListComponent,
     ShoppingEditComponent,
     HeaderComponent,
-    DropdownDirective
+    DropdownDirective,
+    RecipeDetailEmptyComponent
   ],
   imports: [
     BrowserModule,
