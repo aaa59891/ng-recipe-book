@@ -20,7 +20,7 @@ export class RecipeDetailComponent implements OnInit {
     ngOnInit() {
         this.route.paramMap
             .subscribe((paramMap) => {
-                this.recipe = this.recipeService.getRecipe(paramMap.get('name'))
+                this.recipe = this.recipeService.getRecipe(Number(paramMap.get('id')))
             })
     }
 
