@@ -26,7 +26,7 @@ export class RecipeDetailComponent implements OnInit {
                 if(!id || isNaN(parseInt(id))){
                     return;
                 }
-                this.id = parseInt(paramMap.get('id'));
+                this.id = parseInt(id);
                 this.recipe = this.recipeService.getRecipe(this.id)
             })
     }

@@ -18,6 +18,7 @@ import { RouterModule } from '@angular/router';
 import { routes } from './app-routes';
 import { RecipeDetailEmptyComponent } from './components/recipes/recipe-detail-empty/recipe-detail-empty.component';
 import { RecipeEditComponent } from './components/recipes/recipe-edit/recipe-edit.component';
+import { SignupComponent } from './components/auth/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { RecipeEditComponent } from './components/recipes/recipe-edit/recipe-edi
     HeaderComponent,
     DropdownDirective,
     RecipeDetailEmptyComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

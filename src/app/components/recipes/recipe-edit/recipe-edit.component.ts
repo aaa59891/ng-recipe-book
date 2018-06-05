@@ -34,8 +34,9 @@ export class RecipeEditComponent extends AutoUnsubscribe implements OnInit {
     ngOnInit() {
         this.subscriptions.push(
             this.route.paramMap.subscribe(paramMap => {
-                if(paramMap.get('id')){
-                    this.id = +paramMap.get("id");
+                const id = paramMap.get('id');
+                if(id){
+                    this.id = +id;
                     this.editMode = true;
                 }
                 this.initForm();
@@ -76,6 +77,10 @@ export class RecipeEditComponent extends AutoUnsubscribe implements OnInit {
         });
         if(this.editMode){
             const recipe = this.recipeService.getRecipe(this.id);
+            if(!recipe){
+                this.router.navigate(['/recipes']);
+                return;
+            }
             for(let i = 0; i < recipe.ingredients.length; i++){
                 this.ingredients.push(this.createIngredientControlGroup())
             }
